@@ -64,7 +64,7 @@ angular.module('chatapp',[ 'ngRoute']).config(['$locationProvider','$routeProvid
         AName:"Name",
         PatentAreas:[],
         PatentTypes:[],
-        MaxRange:null,
+        MaxRange:3,
         MinRange:null
     };
     self.quantityrange={max:null,min:null};
