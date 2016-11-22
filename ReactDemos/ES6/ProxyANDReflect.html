@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script  type="application/javascript">
+    var obj=new Proxy({},{
+        get:function (target,key,receiver) {
+            console.log('getting ${key}!');
+            return Reflect.get(target,key,receiver)
+        },
+        set:function (target,key,receiver) {
+            console.log('setting ${key}!');
+            return Reflect.set(target,key,receiver);
+        }
+    });
+    obj.count=1;
+    ++obj.count;
+
+    var proxy=new Proxy({},{
+        get:function (target,property) {
+            return 35;
+        }
+    });
+    console.log(proxy.time);
+    console.log(proxy.name);
+    console.log(proxy.title);
+
+    var hander={
+        get:function (target,name) {
+            if(name==='prototype'){
+                return Object.prototype;
+            }
+            return 'Hello,'+name;
+        },
+        apply:function (target,thisBinding,args) {
+            return args[0]
+        },
+        construct:function (target,args) {
+            return {value:args[1]};
+        }
+    };
+    var fproxy=new Proxy(function (x,y) {
+        return x+y;
+    },hander);
+
+    console.log(fproxy(1,2));
+    console.log(new fproxy(1.2));
+    console.log(fproxy.prototype===Object.prototype);
+    console.log(fproxy.foo);
+
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+<div>
+<p>你好</p>
+    <p>ES6</p>
+    <span name="11">ECMAScript6</span>
+    <span name="12">ECMAScript6.1</span>
+</div>
+</body>
+<script type="application/javascript">
+    let arrayLike={
+        '0':'a',
+        '1':'b',
+        '2':'c',
+        length:3
+    };
+    let arr2=Array.from(arrayLike);
+    console.log(arr2);
+
+    let ps=document.querySelectorAll('p');
+    Array.from(ps).forEach(function (p) {
+        console.log(p);
+    })
+
+    console.log(Array.from('hello'));
+
+    console.log(Array.from([1,2,3]).map(x=>x*x))
+
+    let spans=document.querySelectorAll('span');
+    let names=Array.prototype.map.call(spans,s=>s.textContent);
+    let names2=Array.from(spans,s=>s.textContent);
+
+//    console.log(names);
+//    console.log(names2);
+
+    console.log(Array.of(3,11,8))
+
+    console.log([1,4,-5,10].find((n)=>n<5));
+
+    let arr=[1,5,10,15].find(function (vaule,index,arr) {
+        return vaule>9;
+    });
+    console.log(arr);
+
+    let arrfill=['a','b','c'].fill(7,1,2);
+    console.log(arrfill);
+
+    for(let index of ['a','b'].keys()){
+        console.log(index);
+    }
+
+    for (let [index,elem] of ['a','b'].entries()){
+        console.log(index,elem);
+    }
+    [,'a'].forEach((x,i)=>console.log("foreach="+i));
+    console.log(['a',,'b'].filter(x=>true));
+//    console.log([,'a',undefined,null],join('#'));
+    console.log([...[,'a'].entries()]);
+</script>
+</html>

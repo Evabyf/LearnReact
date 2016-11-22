@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p>
+        <h1>Hello World</h1>
+    </p>
+</div>
+</body>
+<script type="application/javascript">
+var a="\u0061";
+    console.log(a);
+
+var b="\uD842\uDFB7";
+console.log(b);
+
+var s="吉";
+console.log("s.length="+s.length);
+console.log("s.charAt(0)="+s.charAt(0));
+console.log("s.charAt(1)="+s.charAt(1));
+console.log("s.charCodeAt(0)="+s.charCodeAt(0));
+console.log("s.charCodeAt(1)="+s.charCodeAt(1));
+var ss="吉a"
+console.log("ss.codePointAt(0)="+ss.codePointAt(0));
+console.log("ss.codePointAt(1)="+ss.codePointAt(1));
+console.log("ss.charCodeAt(2)="+ss.charCodeAt(2));
+
+    console.log(String.fromCharCode(0x20BB7));
+
+    for(let codepoint of 'foo'){
+        console.log(codepoint);
+    }
+    console.log('\u01D1'.normalize() === '\u004F\u030C'.normalize());
+
+    var sss="Hello world!";
+    console.log(sss.startsWith('Hello'));
+    console.log(sss.endsWith('!'));
+    console.log(sss.includes('o'));
+
+
+</script>
+</html>

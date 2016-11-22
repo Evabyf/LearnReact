@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function</title>
+</head>
+<body>
+
+</body>
+<script type="application/javascript">
+    function log(x,y='World'){
+        console.log(x,y);
+    }
+    log('Hello');
+    log('Hello','China');
+    log('Hello','');
+
+    function Point(x=0,y=0){
+        this.x=x;
+        this.y=y;
+    }
+    var p=new Point();
+    console.log(p);
+
+    function foo({x,y=5}) {
+        console.log(x,y);
+    }
+    foo({});
+    foo({x:1});
+    foo({x:1,y:2});
+//    foo();
+    function fetch(url,{body='',method='GET',header={}}={}) {
+        console.log(method);
+    }
+
+    console.log((function (a) {}).length);
+    console.log((function (a=5) {}).length);
+    console.log((function (a,b,c=5) {}).length);
+
+    var x=1;
+    function f(x,y=x) {
+        console.log("f="+y)
+    }
+    f(2);
+
+    let fooo='outer';
+    function bar(func=x=>fooo) {
+        let fooo='inner';
+        console.log(func());
+    };
+    bar();
+
+    function add(...values) {
+        let sum=0;
+        for(var val of values){
+            sum+=val;
+        }
+        return sum;
+    }
+    console.log(add(2,5,3));
+
+    function push(array,...items) {
+        items.forEach(function (item) {
+            array.push(item);
+            console.log(item);
+        });
+    }
+    var aa=[];
+    push(aa,1,2,3);
+    console.log(aa);
+
+    console.log(...[1,2,3]);
+    console.log(1,...[2,3,4,5],6);
+
+    console.log(Math.max(...[14,3,77]));
+
+    var arrr1=['a','b','c'];
+    var arrr2=['d','e'];
+    var arrr3=['f','g'];
+//    arrr1.push(...arrr2)
+//    console.log(arrr1);
+    console.log([...arrr1,...arrr2,...arrr3]);
+    const [first,...rest]=[1,2,3,4,5,6];
+    console.log(first);
+    console.log(rest);
+
+    let map=new Map([[1,'one'],[2,'two'],[3,'three']]);
+    let arr=[...map.keys()];
+    console.log(arr);
+    var go=function *() {
+        yield 1;yield 2;yield 3;
+    };
+    console.log(...go());
+
+    var func1=function () { };
+    console.log(func1.name);
+
+</script>
+</html>

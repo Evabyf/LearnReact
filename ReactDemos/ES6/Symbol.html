@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol</title>
+</head>
+<body>
+
+</body>
+<script type="application/javascript">
+    var mySymbol=Symbol('bar');
+    var a={};
+    a.mySymbol='Hello';
+    console.log(a[mySymbol]);
+    console.log(a['mySymbol']);
+
+    log.levels={
+        DEBUG:Symbol('debug'),
+        INFO:Symbol('info'),
+        WARN:Symbol('warn')
+    }
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number</title>
+</head>
+<body>
+<div>
+    <p id="number"></p>
+</div>
+</body>
+<script type="application/javascript">
+    console.log(Number.parseInt('12.34'));
+    console.log(Number.parseFloat('123.45#'));
+    console.log(Number.EPSILON);
+    console.log(Number.EPSILON.toFixed(20));
+    console.log(Math.pow(2,53));
+    console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER)-1);
+    console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER));
+    console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER));
+    console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER)+1);
+    console.log(Math.trunc(4.1));
+    console.log(Math.trunc(4.9));
+    console.log(Math.trunc(-4.1));
+    console.log(Math.trunc(-4.9));
+    console.log(Math.trunc(-0.1234));
+    console.log(Math.trunc(NaN));
+    console.log(Math.trunc('foo'));
+    console.log(Math.trunc());
+</script>
+</html>
